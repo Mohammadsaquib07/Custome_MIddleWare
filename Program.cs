@@ -37,7 +37,11 @@ app.MapGet("/weatherforecast", () =>
 app.UseMiddleware<CustomeMiddleware>();
 app.UseMiddleware<MonitorRequestTime>();
 app.UseMiddleware<CatchGlobalException>();
-app.Run();
+app.Run(
+   context=>{
+    throw new Exception("Boom");
+   }
+);
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
