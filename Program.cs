@@ -36,6 +36,7 @@ app.MapGet("/weatherforecast", () =>
 .WithOpenApi();
 app.UseMiddleware<CustomeMiddleware>();
 app.UseMiddleware<MonitorRequestTime>();
+app.UseMiddleware<CatchGlobalException>();
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
