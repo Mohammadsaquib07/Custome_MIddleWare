@@ -37,6 +37,7 @@ app.MapGet("/weatherforecast", () =>
 app.UseMiddleware<CustomeMiddleware>();
 app.UseMiddleware<MonitorRequestTime>();
 app.UseMiddleware<CatchGlobalException>();
+app.UseMiddleware<JwtAuthMiddleware>();
 app.Run(
    context=>{
     throw new Exception("Boom");

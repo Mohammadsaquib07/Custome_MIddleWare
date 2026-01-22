@@ -32,3 +32,8 @@
 /home/saquib/DotnetCore/MiddlewarePractice/obj/Debug/net8.0/MiddlewarePractice.genruntimeconfig.cache
 /home/saquib/DotnetCore/MiddlewarePractice/obj/Debug/net8.0/ref/MiddlewarePractice.dll
 /home/saquib/DotnetCore/MiddlewarePractice/obj/Debug/net8.0/MiddlewarePractice.sourcelink.json
+/home/saquib/DotnetCore/MiddlewarePractice/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/home/saquib/DotnetCore/MiddlewarePractice/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/saquib/DotnetCore/MiddlewarePractice/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/home/saquib/DotnetCore/MiddlewarePractice/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/home/saquib/DotnetCore/MiddlewarePractice/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
