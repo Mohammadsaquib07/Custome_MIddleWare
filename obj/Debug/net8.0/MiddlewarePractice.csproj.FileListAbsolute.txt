@@ -31,3 +31,4 @@
 /home/saquib/DotnetCore/MiddlewarePractice/obj/Debug/net8.0/MiddlewarePractice.pdb
 /home/saquib/DotnetCore/MiddlewarePractice/obj/Debug/net8.0/MiddlewarePractice.genruntimeconfig.cache
 /home/saquib/DotnetCore/MiddlewarePractice/obj/Debug/net8.0/ref/MiddlewarePractice.dll
+/home/saquib/DotnetCore/MiddlewarePractice/obj/Debug/net8.0/MiddlewarePractice.sourcelink.json
