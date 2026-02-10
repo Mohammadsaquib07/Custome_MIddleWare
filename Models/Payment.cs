@@ -5,4 +5,5 @@ public abstract class Payment
     public DateTime CreatedOn { get; set; }
     public string? Status { get; set; }
     public abstract bool ProcessPayment();
+    public int MyProperty { get;set; }
 }
