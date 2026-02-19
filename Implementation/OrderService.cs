@@ -1,20 +1,27 @@
 using domain.entities;
 using domain.orderentity;
+using IOrderRepositoryInterface;
 using OrderServiceInterface;
 
 namespace OrderServiceImplementation
 {
     public class OrderService : IOrderService
     {
+        private readonly IOrderRepository _iorderrepo;
+        public OrderService(IOrderRepository IOrderRepository)
+        {
+            _iorderrepo = IOrderRepository;
+        }
         public Order CreateOrder(int orderId)
         {
-            return new Order(orderId);
+            var order = new Order(orderId);
+            _iorderrepo.Add(order);
+            return order;
         }
 
         public void AddItems(Order order,string name,decimal price,int quantity)
         {
-            var items = new OrderItem(name,price,quantity);
-            order.AddItems(items);
+            order.AddItems(new OrderItem(name,price,quantity));
         }
 
         public decimal GetTotal(Order order)

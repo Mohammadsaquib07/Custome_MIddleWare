@@ -75,11 +75,14 @@ using Microsoft.EntityFrameworkCore;
 using OrderServiceInterface;
 using OrderServiceImplementation;
 using domain.orderentity;
+using IOrderRepositoryInterface;
+using OrderRepositoryImplementation;
 public class Program
 {  
     public static void Main()
     { 
-        IOrderService orderserObj = new OrderService();
+        IOrderRepository orderRepo = new OrderRepository();
+        IOrderService orderserObj = new OrderService(orderRepo);
         var order = orderserObj.CreateOrder(1);
         orderserObj.AddItems(order,"Laptop",35000,3);
         orderserObj.AddItems(order,"Laptop Bag",500,1);
@@ -124,7 +127,6 @@ public class Program
 // CheckEmail(Registered,"Saadkudle08@gmail.com");
 
     }
-
     // public static void CheckEmail(HashSet<string> emails,string email)
     // {
     //     if (!emails.Add(email))
