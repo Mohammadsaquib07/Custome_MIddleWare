@@ -1,4 +1,5 @@
 using domain.orderentity;
+using domain.discountstrategyinterface;
 
 namespace OrderServiceInterface
 {
@@ -6,6 +7,7 @@ namespace OrderServiceInterface
     {
         Order CreateOrder(int orderId);
         void AddItems(Order order,string name,decimal price,int quantity);
-        decimal GetTotal(Order order);
+        decimal GetTotal(Order order, IDiscountStrategy discountStrategy);
+        decimal GetDiscountApplied(Order order, IDiscountStrategy discountStrategy);
     }
 }

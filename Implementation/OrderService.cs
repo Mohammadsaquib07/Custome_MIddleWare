@@ -2,6 +2,7 @@ using domain.entities;
 using domain.orderentity;
 using IOrderRepositoryInterface;
 using OrderServiceInterface;
+using domain.discountstrategyinterface;
 
 namespace OrderServiceImplementation
 {
@@ -19,14 +20,22 @@ namespace OrderServiceImplementation
             return order;
         }
 
-        public void AddItems(Order order,string name,decimal price,int quantity)
+        public void AddItems(Order order, string name, decimal price, int quantity)
         {
-            order.AddItems(new OrderItem(name,price,quantity));
+            var items = new OrderItem(name, price, quantity);
+            order.AddItems(items);
         }
 
-        public decimal GetTotal(Order order)
+        public decimal GetTotal(Order order, IDiscountStrategy discountStrategy)
         {
-            return order.GetTotalAmount();
+            return order.GetTotalAmount(discountStrategy);
+        }
+
+        public decimal GetDiscountApplied(Order order, IDiscountStrategy discountStrategy)
+        {
+            var raw = order.GetRawTotalAmount();
+            var discounted = order.GetTotalAmount(discountStrategy);
+            return raw - discounted;
         }
     }
 }

@@ -1,3 +1,4 @@
+using domain.discountstrategyinterface;
 using domain.entities;
 using domain.Enums;
 using System.Linq;
@@ -22,9 +23,15 @@ namespace domain.orderentity
             orderItems.Add(items);
         }
 
-        public decimal GetTotalAmount()
+        public decimal GetTotalAmount(IDiscountStrategy idiscountstartegy)
         {
-            return orderItems.Sum(i=>i.GetTotal());
+            var total =  orderItems.Sum(i=>i.GetTotal());
+            return idiscountstartegy.ApplyDiscount(total);
+        }
+
+        public decimal GetRawTotalAmount()
+        {
+            return orderItems.Sum(i => i.GetTotal());
         }
 
         public void MarkAsPaid()
